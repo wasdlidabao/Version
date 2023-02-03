@@ -1,0 +1,32 @@
+server:
+  port: 6789
+  max-http-header-size: 102400
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+spring:
+  application:
+    name: version
+  servlet:
+    multipart:
+      max-file-size: 102400MB
+      max-request-size: 102400MB
+    tomcat:
+      max-http-post-size: -1
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://192.168.2.112:3306/version?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: tzwy
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    open-in-view: true
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
